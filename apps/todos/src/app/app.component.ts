@@ -22,10 +22,6 @@ export class AppComponent {
   }
 
   addTodo() {
-    this.http
-      .post(`/api/addTodo`, {
-        title: `New todo ${Math.floor(Math.random() * 1000)}`
-      })
-      .subscribe(() => this.fetch());
+    this.http.post(`/api/addTodo`, {}).subscribe(() => this.fetch());
   }
 }
