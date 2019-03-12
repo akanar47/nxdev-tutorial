@@ -1,7 +1,4 @@
 <h1>Todos</h1>
 
 <button id="add-todo" (click)="addTodo()">Add Todo</button>
-
-<ul>
-  <li *ngFor="let t of todos" class="todo">{{ t.title }}</li>
-</ul>
+<nxtutorial-todods [todos]="todos"></nxtutorial-todods>
