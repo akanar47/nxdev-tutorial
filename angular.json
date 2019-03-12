@@ -22,13 +22,8 @@
             "main": "apps/todos/src/main.ts",
             "polyfills": "apps/todos/src/polyfills.ts",
             "tsConfig": "apps/todos/tsconfig.app.json",
-            "assets": [
-              "apps/todos/src/favicon.ico",
-              "apps/todos/src/assets"
-            ],
-            "styles": [
-              "apps/todos/src/styles.less"
-            ],
+            "assets": ["apps/todos/src/favicon.ico", "apps/todos/src/assets"],
+            "styles": ["apps/todos/src/styles.less"],
             "scripts": [],
             "es5BrowserSupport": true
           },
@@ -84,9 +79,7 @@
               "apps/todos/tsconfig.app.json",
               "apps/todos/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -125,9 +118,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/todos-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -145,9 +136,7 @@
             "outputPath": "dist/apps/todos-api",
             "main": "apps/todos-api/src/main.ts",
             "tsConfig": "apps/todos-api/tsconfig.app.json",
-            "assets": [
-              "apps/todos-api/src/assets"
-            ]
+            "assets": ["apps/todos-api/src/assets"]
           },
           "configurations": {
             "production": {
@@ -177,9 +166,7 @@
               "apps/todos-api/tsconfig.app.json",
               "apps/todos-api/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -188,6 +175,37 @@
             "jestConfig": "apps/todos-api/jest.config.js",
             "tsConfig": "apps/todos-api/tsconfig.spec.json"
           }
+        }
+      }
+    },
+    "data": {
+      "root": "libs/data",
+      "sourceRoot": "libs/data/src",
+      "projectType": "library",
+      "prefix": "nxtutorial",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/data/tsconfig.lib.json",
+              "libs/data/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/data/src/test.ts",
+            "tsConfig": "libs/data/tsconfig.spec.json",
+            "karmaConfig": "libs/data/karma.conf.js"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "less"
         }
       }
     }
