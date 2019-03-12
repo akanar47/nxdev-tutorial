@@ -13,6 +13,9 @@
     },
     "todos-e2e": {
       "tags": []
+    },
+    "todos-api": {
+      "tags": []
     }
   }
 }
